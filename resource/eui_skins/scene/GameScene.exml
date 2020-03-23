@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.GameScene" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:com="com.*" width="750" height="1334">
+	<w:Config id="1699015f821" />
+	<e:Image id="bg" source="BG_jpg" x="0" y="0"/>
+
+	<e:Group id="out_con" anchorOffsetX="375" width="750" anchorOffsetY="0" height="1091" horizontalCenter="1" y="243">
+		<e:Group id="pic_con" width="590" height="328" y="194" anchorOffsetX="295" anchorOffsetY="164" x="375"/>
+		<e:Group id="con" width="590" height="682" y="746" anchorOffsetX="295" anchorOffsetY="341" horizontalCenter="1">
+			<e:Group id="input_con" width="590" height="134" y="68" anchorOffsetX="295" anchorOffsetY="67" scaleX="1" scaleY="1" x="295">
+			<e:layout>
+				<e:HorizontalLayout gap="22" horizontalAlign="center"/>
+			</e:layout>
+			<com:ComInput id="input0" x="162" y="62" skinName="skins.ComInput"/>
+			<com:ComInput x="172" y="72" id="input1" skinName="skins.ComInput"/>
+			<com:ComInput x="182" y="82" id="input2" skinName="skins.ComInput"/>
+			<com:ComInput x="192" y="92" id="input3" skinName="skins.ComInput"/>
+			</e:Group>
+			<e:Image id="line" source="line_png" y="154" horizontalCenter="0" scaleX="0"/>
+			<e:Group id="words_con" width="590" height="504" y="429" anchorOffsetX="295" anchorOffsetY="252" x="295" scaleX="1" scaleY="1">
+			<e:layout>
+				<e:TileLayout horizontalGap="15" verticalGap="15"/>
+			</e:layout>
+			<com:ComSelection id="selection_0" x="100" y="83" width="105" height="105"/>
+			<com:ComSelection id="selection_1" x="110" y="93" width="105" height="105"/>
+			<com:ComSelection id="selection_2" x="120" y="103" width="105" height="105"/>
+			<com:ComSelection id="selection_3" x="130" y="113" width="105" height="105"/>
+			<com:ComSelection id="selection_4" x="140" y="123" width="105" height="105"/>
+			<com:ComSelection id="selection_5" x="150" y="133" width="105" height="105"/>
+			<com:ComSelection id="selection_6" x="160" y="143" width="105" height="105"/>
+			<com:ComSelection id="selection_7" x="170" y="153" width="105" height="105"/>
+			<com:ComSelection id="selection_8" x="180" y="163" width="105" height="105"/>
+			<com:ComSelection id="selection_9" x="190" y="173" width="105" height="105"/>
+			<com:ComSelection id="selection_10" x="200" y="183" width="105" height="105"/>
+			<com:ComSelection id="selection_11" x="210" y="193" width="105" height="105"/>
+			<com:ComSelection id="selection_12" x="220" y="203" width="105" height="105"/>
+			<com:ComSelection id="selection_13" x="230" y="213" width="105" height="105"/>
+			<com:ComSelection id="selection_14" x="240" y="223" width="105" height="105"/>
+			<com:ComSelection id="selection_15" x="250" y="233" width="105" height="105"/>
+			<com:ComSelection id="selection_16" x="260" y="243" width="105" height="105"/>
+			<com:ComSelection id="selection_17" x="270" y="253" width="105" height="105"/>
+			<com:ComSelection id="selection_18" x="280" y="263" width="105" height="105"/>
+			<com:ComSelection id="selection_19" x="290" y="273" width="105" height="105"/>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+
+
+
+
+	<!--<e:Group id="conParticles" horizontalCenter="0" top="0" touchChildren="false" touchEnabled="false">
+	</e:Group>-->
+
+	<!--<e:Group id="conFloat" x="0" width="100%" height="82%" bottom="0">
+	<e:Rect id="floatDebug" width="100%" height="100%" fillColor="0x00ff00" fillAlpha="0.3" x="0" y="0" visible="false" />
+</e:Group>
+-->
+</e:Skin>

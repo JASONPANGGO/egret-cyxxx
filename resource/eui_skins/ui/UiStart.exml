@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.UiStart" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bg" width="100%" height="100%" x="0" y="0" fillAlpha="0.5"/>
+	<e:Group id="chat" x="1" y="380">
+		<e:Image source="guideframe_png" x="0" y="0"/>
+		<e:Image id="btn" source="word1_png" x="282.5" y="376"/>
+	</e:Group>
+</e:Skin>
