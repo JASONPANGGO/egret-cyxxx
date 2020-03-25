@@ -102,6 +102,7 @@ var com;
         /* =========== 业务代码-start =========== */
         ComInput.prototype.write = function (word) {
             this.word.text = word;
+            this.word.textColor = gConst.gameConfig.inputColor;
             gTween.toBigShow(this.word, 300, 1, 1, egret.Ease.bounceOut);
         };
         ComInput.prototype.clear = function () {
@@ -114,7 +115,12 @@ var com;
             });
         };
         ComInput.prototype.clickClear = function () {
+            if (!GameMgr.gameScene.started || !GameMgr.gameScene.canSelect)
+                return;
             GameMgr.gameScene.clearSelect(this.word.text);
+        };
+        ComInput.prototype.correct = function () {
+            this.word.textColor = gConst.gameConfig.rightColor;
         };
         return ComInput;
     }(com.ComFile));

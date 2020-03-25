@@ -60,9 +60,8 @@ var ui;
         /** 窗口大小改变时调用 */
         UiStart.prototype.resizeView = function () {
             // console.info("resizeView", this.width, this.height);
-            // var s1: number = this.width / this.con.width;
-            // var s2: number = this.height / this.con.height;
-            // this.con.scaleX = this.con.scaleY = Math.max(s1, s2);
+            this.chat.x = 0.5 * this.width;
+            this.chat.y = 0.5 * this.height;
             if (this.screenType == 1 /* VERTICAL */) {
                 //竖屏
                 switch (this.mobileType) {
@@ -104,8 +103,9 @@ var ui;
         /* =========== 业务代码-start =========== */
         UiStart.prototype.enter = function () {
             var _this = this;
+            GameMgr.gameScene.setChildIndex(this, -1);
             gTween.fadeIn(this.bg);
-            gTween.toTopShow(this.chat, 800, 0.5 * this.height, void 0, void 0, egret.Ease.bounceOut, void 0, {
+            gTween.toTopShow(this.chat, 800, 0.5 * this.height, 0.5 * this.height, 1, egret.Ease.bounceOut, void 0, {
                 callback: function () {
                     gTween.loopAlpha(_this.btn, 0, 500, 1);
                 }
@@ -113,10 +113,14 @@ var ui;
         };
         UiStart.prototype.onClose = function () {
             var _this = this;
+            this.removeEvent();
             gTween.fadeOut(this, 500, 1, void 0, void 0, {
                 callback: function () {
                     if (_this.parent) {
+                        GameMgr.gameScene.showGuide();
                         _this.close();
+                        GameMgr.gameScene.canSelect = true;
+                        GameMgr.gameScene.started = true;
                     }
                 }
             });

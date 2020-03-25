@@ -153,14 +153,14 @@ namespace scene {
 			Mapi.install();
 		}
 
-		/** 自动结束 */
-		public autoEnd() {
-			const autoEndTime: number = GameMgr.getConfig("autoEndTime");
-			if (autoEndTime != void 0 && autoEndTime > 0) {
-				egret.clearTimeout(this.endDelay);
-				this.endDelay = egret.setTimeout(this.openEnd, this, autoEndTime * 1000);
-			}
-		}
+		// /** 自动结束 */
+		// public autoEnd() {
+		// 	const autoEndTime: number = GameMgr.getConfig("autoEndTime");
+		// 	if (autoEndTime != void 0 && autoEndTime > 0) {
+		// 		egret.clearTimeout(this.endDelay);
+		// 		this.endDelay = egret.setTimeout(this.openEnd, this, autoEndTime * 1000);
+		// 	}
+		// }
 
 		/* =========== 粒子代码-start =========== */
 		private particleMgr: util.ParticleMgr;
@@ -397,31 +397,6 @@ namespace scene {
 			this.UiFirst.close();
 		}
 
-		/** 打开结束界面 */
-		public openEnd(isShowEnd: boolean = true) {
-			// console.info("openEnd");
-			egret.clearTimeout(this.endDelay);
-			if (GameMgr.isEnd) {
-				return;
-			}
-			GameMgr.isEnd = true;
-			this.hideGuide();
-
-			this.removeEvent();
-			Mapi.gameEnd();
-
-			if (isShowEnd) {
-				this.showEnd();
-			}
-		}
-
-		/** 显示结束界面 */
-		public showEnd() {
-			this.gameEnd();
-
-			this.showEndOther();
-		}
-
 		/** 结束界面其它元素展示 */
 		public showEndOther() {
 			// console.info("showEndOther");
@@ -439,43 +414,6 @@ namespace scene {
 			// this.UiEnd.close();
 		}
 
-		public guide: com.ComGuide; //引导组件
-		public showGuided: boolean; //引导显示状态
-
-		/** 显示引导 */
-		public showGuide() {
-			if (GameMgr.isEnd) {
-				return;
-			}
-			if (this.showGuided) {
-				return;
-			}
-			this.showGuided = true;
-
-			if (!this.guide) {
-				this.guide = new com.ComGuide();
-				this.guide.open();
-			}
-
-			const time: number = this.firstTouch ? gConst.firstGuideTimer : gConst.afterGuideTimer;
-
-			// this.guide.setData(time, { target1: this.item }, this);
-			// this.guide.play();
-		}
-
-		/** 隐藏引导 */
-		public hideGuide() {
-			this.firstTouch = false;
-
-			if (!this.guide) {
-				return;
-			}
-			if (!this.showGuided) {
-				return;
-			}
-			this.showGuided = false;
-			this.guide.over();
-		}
 		/* =========== 业务代码-end =========== */
 
 		private _update(event?: egret.Event): void {

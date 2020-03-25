@@ -15,6 +15,9 @@ var ui;
         __extends(UiPass, _super);
         function UiPass() {
             var _this = _super.call(this) || this;
+            /* =========== 框架结构代码-end =========== */
+            /* =========== 业务代码-start =========== */
+            _this.canClsoe = false;
             _this.skinName = skins.UiPass;
             return _this;
         }
@@ -57,9 +60,15 @@ var ui;
         /** 窗口大小改变时调用 */
         UiPass.prototype.resizeView = function () {
             // console.info("resizeView", this.width, this.height);
-            // this.out_con.scaleX = this.out_con.scaleY = Math.min(this.width / this.out_con.width, 1, this.height / this.out_con.height)
+            var baseScale = gConst.mobileByScale[GameMgr.screenType][GameMgr.mobileType];
             if (this.screenType == 1 /* VERTICAL */) {
                 //竖屏
+                this.pass_con.width = 750;
+                this.pass_con.height = 1334;
+                this.moon_con.y = 0.4 * this.pass_con.height;
+                this.moon_con.horizontalCenter = this.text_con.horizontalCenter = 0;
+                this.moon_con.x = this.text_con.right = this.moon_con.bottom = this.moon_con.verticalCenter = this.text_con.verticalCenter = NaN;
+                this.text_con.bottom = 0;
                 switch (this.mobileType) {
                     //iPhoneX或以上
                     case 1 /* IPHONE_X */:
@@ -74,6 +83,14 @@ var ui;
             }
             else {
                 //横屏
+                this.pass_con.width = 1334;
+                this.pass_con.height = 750;
+                this.moon_con.verticalCenter = 50;
+                this.text_con.verticalCenter = 0;
+                this.moon_con.horizontalCenter = this.text_con.horizontalCenter = this.text_con.bottom = NaN;
+                this.moon_con.x = 0.25 * this.pass_con.width;
+                this.moon_con.bottom = 0;
+                this.text_con.right = 0;
                 switch (this.mobileType) {
                     //iPhoneX或以上
                     case 1 /* IPHONE_X */:
@@ -86,6 +103,7 @@ var ui;
                         break;
                 }
             }
+            this.pass_con.scaleX = this.pass_con.scaleY = Math.min(this.width / this.pass_con.width, this.height / this.pass_con.height, 1);
         };
         /** 屏幕横竖屏转换时调用 */
         UiPass.prototype.rotateView = function () {
@@ -95,11 +113,10 @@ var ui;
             else {
             }
         };
-        /* =========== 框架结构代码-end =========== */
-        /* =========== 业务代码-start =========== */
         UiPass.prototype.enter = function () {
             var _this = this;
             this.visible = true;
+            this.canClsoe = false;
             this.explain.text = '';
             var bone = new com.ComBones();
             bone.setData(this.moon_con, 'moon');
@@ -115,18 +132,21 @@ var ui;
                             i++;
                         }
                         else {
+                            _this.canClsoe = true;
                             egret.clearInterval(timer);
                         }
-                    }, _this, 50);
+                    }, _this, 30);
                     gTween.loopAlpha(_this.btn, 0, 600, 1);
                 }
             });
         };
         UiPass.prototype.nextLevel = function () {
             var _this = this;
+            if (!this.canClsoe)
+                return;
+            this.removeEvent();
             gTween.fadeOut(this, 500, 1, void 0, void 0, {
                 callback: function () {
-                    console.log('close');
                     _this.close();
                     _this.congrats.visible = false;
                     GameMgr.gameScene.nextLevel();

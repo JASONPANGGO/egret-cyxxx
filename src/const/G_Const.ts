@@ -202,7 +202,7 @@ namespace gConst {
 			key: '表里山河',
 			selections: '表 里 山 河 柳 尘 遁 看 异 门 红 来 朝 田 入 破 众 空 时 皆',
 			pic: 'pic4',
-			explain: '指有山河天险作为屏障。'
+			explain: '表里山河：指有山河天险作为屏障。'
 		},
 
 		{

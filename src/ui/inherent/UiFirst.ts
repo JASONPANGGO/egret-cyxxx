@@ -99,15 +99,15 @@ namespace ui {
 		/** 注册事件 */
 		protected addEvent() {
 			// console.info("addEvent");
-			this.gBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
-			this.gLogo.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
+			this.conBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
+			this.conLogo.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
 		}
 
 		/** 移除事件 */
 		protected removeEvent() {
 			// console.info("removeEvent");
-			this.gBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
-			this.gLogo.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
+			this.conBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
+			this.conLogo.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.clickArticle, this);
 		}
 
 		/** 窗口大小改变时调用 */
@@ -164,6 +164,7 @@ namespace ui {
 				// bg.width = this.width;
 				// bg.height = conLogo.height * conLogo.scaleY + (conLogo.y - conLogo.anchorOffsetY * conLogo.scaleY) * 2;
 				// bg.x = 0;
+				conLogo.horizontalCenter = conBtn.horizontalCenter = 0
 			} else {
 				//横屏
 				logoLoc.scale = this.initConLogoS * baseScale;
@@ -203,6 +204,8 @@ namespace ui {
 				// bg.width = (this.width - conLogo.x) * 2;
 				// bg.height = this.height;
 				// bg.x = this.width - bg.width;
+
+				conBtn.horizontalCenter = conLogo.horizontalCenter = -0.2 * this.width
 			}
 
 			conLogo.scaleX = conLogo.scaleY = logoLoc.scale;

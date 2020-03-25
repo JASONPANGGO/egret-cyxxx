@@ -1,0 +1,73 @@
+{
+  "skins": {
+    "eui.Button": "resource/eui_skins/ButtonSkin.exml",
+    "eui.CheckBox": "resource/eui_skins/CheckBoxSkin.exml",
+    "eui.HScrollBar": "resource/eui_skins/HScrollBarSkin.exml",
+    "eui.HSlider": "resource/eui_skins/HSliderSkin.exml",
+    "eui.Panel": "resource/eui_skins/PanelSkin.exml",
+    "eui.TextInput": "resource/eui_skins/TextInputSkin.exml",
+    "eui.ProgressBar": "resource/eui_skins/ProgressBarSkin.exml",
+    "eui.RadioButton": "resource/eui_skins/RadioButtonSkin.exml",
+    "eui.Scroller": "resource/eui_skins/ScrollerSkin.exml",
+    "eui.ToggleSwitch": "resource/eui_skins/ToggleSwitchSkin.exml",
+    "eui.VScrollBar": "resource/eui_skins/VScrollBarSkin.exml",
+    "eui.VSlider": "resource/eui_skins/VSliderSkin.exml",
+    "eui.ItemRenderer": "resource/eui_skins/ItemRendererSkin.exml",
+    "com.ComSelection": "resource/eui_skins/com/ComSelection.exml"
+  },
+  "autoGenerateExmlsList": true,
+  "exmls": [
+    {
+      "path": "resource/eui_skins/com/ComInput.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<e:Skin class=\"skins.ComInput\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\n    <e:Image id=\"bg\" source=\"square_png\" x=\"0\" y=\"0\" />\n    <e:Label id=\"word\" text=\"紧\" anchorOffsetX=\"32.5\" anchorOffsetY=\"32.5\" textColor=\"0xdc862c\" horizontalCenter=\"0\"\n             verticalCenter=\"0\" size=\"92\" fontFamily=\"SimHei\" />\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/ComSelection.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<e:Skin class=\"skins.ComSelection\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\n\t<e:Group id=\"con\" horizontalCenter=\"0\" verticalCenter=\"0\" anchorOffsetX=\"53\" anchorOffsetY=\"53\">\n\t\t<e:Image id=\"bg\" source=\"square_png\" scaleX=\"0.8\" scaleY=\"0.8\" anchorOffsetX=\"65.5\" anchorOffsetY=\"65.5\" horizontalCenter=\"0\" verticalCenter=\"0\"/>\n\t\t<e:Image id=\"bg_selected\" source=\"click_png\" scaleX=\"0.8\" scaleY=\"0.8\" anchorOffsetX=\"65.5\" anchorOffsetY=\"65.5\" horizontalCenter=\"0\" verticalCenter=\"0\" visible=\"false\"/>\n\t\t<e:Label id=\"word\" text=\"锦\" anchorOffsetX=\"33.5\" anchorOffsetY=\"33.5\" textColor=\"0x90170e\" fontFamily=\"SimHei\" size=\"67\" horizontalCenter=\"0\" verticalCenter=\"0\"/>\n\t</e:Group>\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/base/ComEmpty.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComEmpty\" width=\"200\" height=\"100\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\r\n\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/inherent/ComBubble.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComBubble\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\" xmlns:com=\"com.*\"\r\n        xmlns:item=\"item.*\">\r\n\t<e:Group id=\"con\" x=\"0\" y=\"0\" width=\"335\" height=\"100\">\r\n\t\t<e:Group id=\"conWord\" width=\"335\" anchorOffsetX=\"148\" anchorOffsetY=\"-20\" height=\"100\" x=\"148\" y=\"-20\" scaleX=\"1\"\r\n\t\t         scaleY=\"1\">\r\n\t\t\t<e:Image id=\"bgDebug\" source=\"pHelpMe_png\" height=\"120\" anchorOffsetX=\"167.5\" anchorOffsetY=\"50\" horizontalCenter=\"0\"\r\n\t\t\t         width=\"335\" y=\"50\" rotation=\"180\" scale9Grid=\"37,28,7,6\" />\r\n\t\t\t<e:Image id=\"bgWord\" source=\"pHelpMe_png\" height=\"120\" anchorOffsetX=\"167.5\" anchorOffsetY=\"50\" horizontalCenter=\"0\"\r\n\t\t\t         scale9Grid=\"37,28,7,6\" width=\"335\" y=\"50\" rotation=\"0\" />\r\n\t\t\t<e:Image id=\"word\" source=\"lang_guide_png\" horizontalCenter=\"0\" verticalCenter=\"0\" />\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/inherent/ComFloat.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComFloat\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\" xmlns:com=\"com.*\">\r\n\t<e:Group id=\"con\" x=\"60.5\" y=\"15\" anchorOffsetX=\"60.5\" anchorOffsetY=\"15\">\r\n\t\t<e:Group id=\"conFloat\" x=\"60.5\" y=\"15\" anchorOffsetX=\"60.5\" anchorOffsetY=\"15\">\r\n\t\t\t<e:Image id=\"float\" anchorOffsetX=\"60.5\" anchorOffsetY=\"15\"\r\n\t\t\t          source=\"pBGspray_png\" x=\"60.5\" y=\"15\"/>\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/inherent/ComGuide.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComGuide\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\" xmlns:com=\"com.*\">\r\n\t<e:Image id=\"hand\"  x=\"49\" y=\"7\" anchorOffsetX=\"49\" anchorOffsetY=\"7\" source=\"hand_png\"/>\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/inherent/ComLight.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComLight\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\" width=\"285\" height=\"285\">\r\n\t<e:Group id=\"con\" x=\"0\" y=\"0\" width=\"285\" height=\"285\">\r\n\t</e:Group>\r\n\t<e:Image id=\"warn\" anchorOffsetX=\"35\" anchorOffsetY=\"77\" x=\"160\" y=\"128\" source=\"p_zhiyin1_png\"/>\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/com/inherent/ComProgress.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.ComProgress\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\r\n\t<e:Group id=\"con\" y=\"0\" x=\"0\">\r\n\t\t<e:Group id=\"conBar\">\r\n\t\t\t<e:Image source=\"icon3_wait_png\"/>\r\n\t\t\t<e:Image id=\"bar\" x=\"0\" y=\"0\" source=\"icon4_wait_png\"/>\r\n\t\t</e:Group>\r\n\r\n\t</e:Group>\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/scene/GameScene.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.GameScene\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\" xmlns:ns1=\"*\"\r\n        xmlns:com=\"com.*\" width=\"750\" height=\"1334\">\r\n\t<w:Config id=\"1699015f821\" />\r\n\t<e:Image id=\"bg\" source=\"BG_jpg\" x=\"0\" y=\"0\"/>\r\n\r\n\t<e:Group id=\"out_con\" anchorOffsetX=\"375\" width=\"750\" anchorOffsetY=\"0\" height=\"1155\" horizontalCenter=\"1\" y=\"177\">\r\n\t\t<e:Group id=\"pic_con\" width=\"694.33\" height=\"386\" y=\"223\" anchorOffsetX=\"347.16\" anchorOffsetY=\"193\" x=\"375.16\"/>\r\n\t\t<e:Group id=\"con\" width=\"590\" height=\"682\" y=\"786\" anchorOffsetX=\"295\" anchorOffsetY=\"341\" x=\"376\">\r\n\t\t\t<e:Group id=\"input_con\" width=\"590\" height=\"134\" y=\"68\" anchorOffsetX=\"295\" anchorOffsetY=\"67\" scaleX=\"1\" scaleY=\"1\" x=\"295\">\r\n\t\t\t<e:layout>\r\n\t\t\t\t<e:HorizontalLayout gap=\"22\" horizontalAlign=\"center\"/>\r\n\t\t\t</e:layout>\r\n\t\t\t<com:ComInput id=\"input0\" x=\"162\" y=\"62\" skinName=\"skins.ComInput\"/>\r\n\t\t\t<com:ComInput x=\"172\" y=\"72\" id=\"input1\" skinName=\"skins.ComInput\"/>\r\n\t\t\t<com:ComInput x=\"182\" y=\"82\" id=\"input2\" skinName=\"skins.ComInput\"/>\r\n\t\t\t<com:ComInput x=\"192\" y=\"92\" id=\"input3\" skinName=\"skins.ComInput\"/>\r\n\t\t\t</e:Group>\r\n\t\t\t<e:Image id=\"line\" source=\"line_png\" y=\"154\" horizontalCenter=\"0\" scaleX=\"0\"/>\r\n\t\t\t<e:Group id=\"words_con\" width=\"590\" height=\"504\" y=\"429\" anchorOffsetX=\"295\" anchorOffsetY=\"252\" x=\"295\" scaleX=\"1\" scaleY=\"1\">\r\n\t\t\t<e:layout>\r\n\t\t\t\t<e:TileLayout horizontalGap=\"15\" verticalGap=\"15\"/>\r\n\t\t\t</e:layout>\r\n\t\t\t<com:ComSelection id=\"selection_0\" x=\"100\" y=\"83\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_1\" x=\"110\" y=\"93\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_2\" x=\"120\" y=\"103\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_3\" x=\"130\" y=\"113\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_4\" x=\"140\" y=\"123\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_5\" x=\"150\" y=\"133\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_6\" x=\"160\" y=\"143\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_7\" x=\"170\" y=\"153\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_8\" x=\"180\" y=\"163\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_9\" x=\"190\" y=\"173\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_10\" x=\"200\" y=\"183\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_11\" x=\"210\" y=\"193\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_12\" x=\"220\" y=\"203\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_13\" x=\"230\" y=\"213\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_14\" x=\"240\" y=\"223\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_15\" x=\"250\" y=\"233\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_16\" x=\"260\" y=\"243\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_17\" x=\"270\" y=\"253\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_18\" x=\"280\" y=\"263\" width=\"105\" height=\"105\"/>\r\n\t\t\t<com:ComSelection id=\"selection_19\" x=\"290\" y=\"273\" width=\"105\" height=\"105\"/>\r\n\t\t\t</e:Group>\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n\t<e:Group id=\"end_con\" horizontalCenter=\"0\" verticalCenter=\"0\">\r\n\t\t<e:Group anchorOffsetX=\"216.5\" width=\"433\" anchorOffsetY=\"66.5\" height=\"133\" verticalCenter=\"290\" horizontalCenter=\"0.5\">\r\n\t\t\t<e:Image id=\"end_btn\" source=\"button_png\" anchorOffsetX=\"226.5\" anchorOffsetY=\"47\" x=\"216.5\" y=\"67\" visible=\"false\"/>\r\n\t\t</e:Group>\r\n\t\t<e:Group horizontalCenter=\"0.5\" verticalCenter=\"-150\" anchorOffsetX=\"272.5\" anchorOffsetY=\"272.5\" width=\"545\" height=\"545\">\r\n\t\t\t<e:Image id=\"end_logo\" source=\"icon_png\" anchorOffsetX=\"272.5\" anchorOffsetY=\"272.5\" y=\"272.5\" x=\"272.5\" visible=\"false\"/>\r\n\t\t</e:Group>\r\n\t\t<e:Group horizontalCenter=\"0\" verticalCenter=\"132\" anchorOffsetX=\"318\" anchorOffsetY=\"91.5\">\r\n\t\t\t<e:Image id=\"end_title\" source=\"word4_png\" anchorOffsetX=\"318\" anchorOffsetY=\"91.5\" x=\"318\" y=\"91.5\" visible=\"false\"/>\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n\r\n\r\n\r\n\r\n\t<!--<e:Group id=\"conParticles\" horizontalCenter=\"0\" top=\"0\" touchChildren=\"false\" touchEnabled=\"false\">\r\n\t</e:Group>-->\r\n\r\n\t<!--<e:Group id=\"conFloat\" x=\"0\" width=\"100%\" height=\"82%\" bottom=\"0\">\r\n\t<e:Rect id=\"floatDebug\" width=\"100%\" height=\"100%\" fillColor=\"0x00ff00\" fillAlpha=\"0.3\" x=\"0\" y=\"0\" visible=\"false\" />\r\n</e:Group>\r\n-->\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/ui/UiPass.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<e:Skin class=\"skins.UiPass\" width=\"750\" height=\"1334\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\n\t<e:Rect id=\"bg\" width=\"100%\" height=\"100%\" x=\"0\" y=\"0\" fillAlpha=\"0.5\"/>\n\t<e:Group id=\"pass_con\" width=\"750\" height=\"1334\" anchorOffsetY=\"0\" horizontalCenter=\"0\" verticalCenter=\"0\">\n\t\t<e:Group id=\"moon_con\" x=\"375\" y=\"531\">\n\t\t\t<e:layout>\n\t\t\t<e:HorizontalLayout horizontalAlign=\"center\" verticalAlign=\"middle\"/>\n\t\t\t</e:layout>\n\t\t</e:Group>\n\t\t<e:Group id=\"text_con\" x=\"0\" y=\"760\">\n\t\t\t<e:Group id=\"congrasts_con\" width=\"750\" anchorOffsetY=\"0\" height=\"186\" y=\"0\" x=\"0\">\n\t\t\t<e:Image id=\"congrats\" source=\"word2_png\" anchorOffsetX=\"348\" anchorOffsetY=\"126\" horizontalCenter=\"0\" y=\"93\" visible=\"false\"/>\n\t\t\t</e:Group>\n\t\t\t<e:Label id=\"explain\" text=\"\" width=\"568\" anchorOffsetY=\"0\" height=\"219.76\" strokeColor=\"0xb57211\" stroke=\"1\" size=\"35\" fontFamily=\"SimHei\" textAlign=\"left\" anchorOffsetX=\"0\" x=\"91\" y=\"261.24\"/>\n\t\t\t<e:Image id=\"btn\" source=\"word3_png\" x=\"156\" y=\"453\"/>\n\t\t</e:Group>\n\t</e:Group>\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/ui/UiStart.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<e:Skin class=\"skins.UiStart\" width=\"750\" height=\"1334\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\n\t<e:Rect id=\"bg\" width=\"100%\" height=\"100%\" x=\"0\" y=\"0\" fillAlpha=\"0.5\"/>\n\t<e:Group id=\"chat\" x=\"375.5\" y=\"667.5\" anchorOffsetX=\"374.5\" anchorOffsetY=\"223.5\">\n\t\t<e:Image source=\"guideframe_png\" x=\"0\" y=\"0\"/>\n\t\t<e:Image id=\"btn\" source=\"word1_png\" x=\"282.5\" y=\"376\"/>\n\t</e:Group>\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/ui/base/UiEmpty.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.UiEmpty\" width=\"750\" height=\"1334\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\r\n\r\n</e:Skin>"
+    },
+    {
+      "path": "resource/eui_skins/ui/inherent/UiFirst.exml",
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<e:Skin class=\"skins.UiFirst\" width=\"750\" height=\"1334\" xmlns:e=\"http://ns.egret.com/eui\" xmlns:w=\"http://ns.egret.com/wing\">\r\n\t<!--<e:Rect id=\"bg\" width=\"750\" height=\"150\" x=\"0\" y=\"0\" fillColor=\"0x2f3651\" fillAlpha=\"0.5\" />-->\r\n\t<e:Group id=\"conLogo\" anchorOffsetX=\"0\" anchorOffsetY=\"0\" y=\"0\" x=\"0\">\r\n\t\t<e:Group id=\"gLogo\" x=\"0\" y=\"0\" scaleX=\"1.2\" scaleY=\"1.2\">\r\n\t\t\t<e:Image id=\"logo\" source=\"logo_png\" x=\"177\" y=\"57\" scaleX=\"0.8\" scaleY=\"0.8\" anchorOffsetX=\"177\" anchorOffsetY=\"57\"/>\r\n\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n\t<e:Group id=\"conBtn\" anchorOffsetX=\"0\" anchorOffsetY=\"0\" y=\"300\" x=\"0\">\r\n\t\t<e:Group id=\"gBtn\" scaleX=\"0.8\" scaleY=\"0.8\">\r\n\t\t\t<e:Image id=\"btn\" source=\"button_png\" x=\"183.13\" y=\"14.25\" scaleX=\"0.8\" scaleY=\"0.8\" anchorOffsetX=\"183.13\" width=\"366.26\" anchorOffsetY=\"38\" height=\"76\"/>\r\n\r\n\r\n\t\t</e:Group>\r\n\t</e:Group>\r\n</e:Skin>"
+    }
+  ]
+}

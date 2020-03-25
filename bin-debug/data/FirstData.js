@@ -13,7 +13,7 @@ var data;
         FirstData.prototype.init = function () {
             this.horizontal = { x: 0, y: 0 }; //横屏位置
             this.vertical = { x: 0, y: 0 }; //竖屏位置
-            this.topSpace = .05; //上间距
+            this.topSpace = .08; //上间距
             this.rightSpace = 25; //右间距
             this.bottomSpace = .001; //下间距
             this.leftSpace = .01; //左间距

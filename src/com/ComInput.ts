@@ -103,6 +103,7 @@ namespace com {
 
 		public write(word: string) {
 			this.word.text = word
+			this.word.textColor = gConst.gameConfig.inputColor
 			gTween.toBigShow(this.word, 300, 1, 1, egret.Ease.bounceOut)
 		}
 
@@ -116,7 +117,12 @@ namespace com {
 		}
 
 		private clickClear() {
+			if (!GameMgr.gameScene.started || !GameMgr.gameScene.canSelect) return
 			GameMgr.gameScene.clearSelect(this.word.text)
+		}
+
+		public correct() {
+			this.word.textColor = gConst.gameConfig.rightColor
 		}
 
 		/* =========== 业务代码-end =========== */

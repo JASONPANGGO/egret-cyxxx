@@ -125,14 +125,6 @@ var scene;
             }
             Mapi.install();
         };
-        /** 自动结束 */
-        GameBase.prototype.autoEnd = function () {
-            var autoEndTime = GameMgr.getConfig("autoEndTime");
-            if (autoEndTime != void 0 && autoEndTime > 0) {
-                egret.clearTimeout(this.endDelay);
-                this.endDelay = egret.setTimeout(this.openEnd, this, autoEndTime * 1000);
-            }
-        };
         /**
          * 创建所有粒子
          * @param {egret.DisplayObjectContainer} parent 粒子父级
@@ -343,27 +335,6 @@ var scene;
             }
             this.UiFirst.close();
         };
-        /** 打开结束界面 */
-        GameBase.prototype.openEnd = function (isShowEnd) {
-            if (isShowEnd === void 0) { isShowEnd = true; }
-            // console.info("openEnd");
-            egret.clearTimeout(this.endDelay);
-            if (GameMgr.isEnd) {
-                return;
-            }
-            GameMgr.isEnd = true;
-            this.hideGuide();
-            this.removeEvent();
-            Mapi.gameEnd();
-            if (isShowEnd) {
-                this.showEnd();
-            }
-        };
-        /** 显示结束界面 */
-        GameBase.prototype.showEnd = function () {
-            this.gameEnd();
-            this.showEndOther();
-        };
         /** 结束界面其它元素展示 */
         GameBase.prototype.showEndOther = function () {
             // console.info("showEndOther");
@@ -378,35 +349,6 @@ var scene;
             // 	return;
             // }
             // this.UiEnd.close();
-        };
-        /** 显示引导 */
-        GameBase.prototype.showGuide = function () {
-            if (GameMgr.isEnd) {
-                return;
-            }
-            if (this.showGuided) {
-                return;
-            }
-            this.showGuided = true;
-            if (!this.guide) {
-                this.guide = new com.ComGuide();
-                this.guide.open();
-            }
-            var time = this.firstTouch ? gConst.firstGuideTimer : gConst.afterGuideTimer;
-            // this.guide.setData(time, { target1: this.item }, this);
-            // this.guide.play();
-        };
-        /** 隐藏引导 */
-        GameBase.prototype.hideGuide = function () {
-            this.firstTouch = false;
-            if (!this.guide) {
-                return;
-            }
-            if (!this.showGuided) {
-                return;
-            }
-            this.showGuided = false;
-            this.guide.over();
         };
         /* =========== 业务代码-end =========== */
         GameBase.prototype._update = function (event) {

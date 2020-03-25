@@ -58,10 +58,9 @@ namespace ui {
 		/** 窗口大小改变时调用 */
 		protected resizeView(): void {
 			// console.info("resizeView", this.width, this.height);
-			// var s1: number = this.width / this.con.width;
-			// var s2: number = this.height / this.con.height;
-			// this.con.scaleX = this.con.scaleY = Math.max(s1, s2);
 
+			this.chat.x = 0.5 * this.width
+			this.chat.y = 0.5 * this.height
 			if (this.screenType == gConst.screenType.VERTICAL) {
 				//竖屏
 				switch (this.mobileType) {
@@ -105,19 +104,27 @@ namespace ui {
 
 		/* =========== 业务代码-start =========== */
 		private enter() {
+
+			GameMgr.gameScene.setChildIndex(this, -1)
 			gTween.fadeIn(this.bg)
-			gTween.toTopShow(this.chat, 800, 0.5 * this.height, void 0, void 0, egret.Ease.bounceOut, void 0, {
+			gTween.toTopShow(this.chat, 800, 0.5 * this.height, 0.5 * this.height, 1, egret.Ease.bounceOut, void 0, {
 				callback: () => {
 					gTween.loopAlpha(this.btn, 0, 500, 1)
 				}
 			})
+
+
 		}
 
 		private onClose() {
+			this.removeEvent()
 			gTween.fadeOut(this, 500, 1, void 0, void 0, {
 				callback: () => {
-					if(this.parent){
+					if (this.parent) {
+						GameMgr.gameScene.showGuide()
 						this.close()
+						GameMgr.gameScene.canSelect = true
+						GameMgr.gameScene.started = true
 					}
 				}
 			})

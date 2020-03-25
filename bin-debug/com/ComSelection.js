@@ -97,6 +97,8 @@ var com;
         /* =========== 框架结构代码-end =========== */
         /* =========== 业务代码-start =========== */
         ComSelection.prototype.onSelect = function (event) {
+            if (!GameMgr.gameScene.canSelect || !GameMgr.gameScene.started)
+                return;
             // 现在已经选择了
             if (this.selected) {
                 this.cancelSelect();
@@ -116,18 +118,27 @@ var com;
         ComSelection.prototype.cancelSelect = function () {
             this.selected = false;
             gTween.fadeOut(this.bg_selected, 300, 1);
-            gTween.toScale(this.con, 0.8 / 0.85, 300);
+            gTween.toScale(this.con, 1, 300, void 0, void 0, void 0, {
+                callback: function () {
+                    GameMgr.gameScene.canSelect = true;
+                }
+            });
         };
         ComSelection.prototype.updateWord = function () {
             var _this = this;
+            this.selected = false;
             gTween.fadeOut(this.bg_selected);
+            gTween.toScale(this.con, 1, 300);
             gTween.toSmallHide(this.word, 500, 1, 1, egret.Ease.backOut, void 0, {
                 callback: function () {
                     _this.word.text = _this.displayWord;
-                    gTween.toBigShow(_this.word, 500, 1, 1, egret.Ease.bounceOut);
+                    gTween.toBigShow(_this.word, 500, 1, 1, egret.Ease.bounceOut, void 0, {
+                        callback: function () {
+                            GameMgr.gameScene.canSelect = true;
+                        }
+                    });
                 }
             });
-            this.selected = false;
         };
         return ComSelection;
     }(com.ComFile));

@@ -1,0 +1,145 @@
+{
+	"groups": [
+		{
+			"keys": "gameConfig_json,languages_json,BG_jpg,click_png,button_png,hand_png,icon_png,word2_png,word3_png,word4_png,frame_png,guideframe_png,line_png,logo_png,pic_ske_json,pic_tex_json,pic_tex_png,pic1_png,pic2_png,pic3_png,pic4_png,pic5_png,square_png,word1_png,moon_ske_json,moon_tex_json,moon_tex_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/image/BG.jpg",
+			"type": "image",
+			"name": "BG_jpg"
+		},
+		{
+			"url": "assets/image/click.png",
+			"type": "image",
+			"name": "click_png"
+		},
+		{
+			"url": "assets/image/frame.png",
+			"type": "image",
+			"name": "frame_png"
+		},
+		{
+			"url": "assets/image/guideframe.png",
+			"type": "image",
+			"name": "guideframe_png"
+		},
+		{
+			"url": "assets/image/line.png",
+			"type": "image",
+			"name": "line_png"
+		},
+		{
+			"url": "assets/image/logo.png",
+			"type": "image",
+			"name": "logo_png"
+		},
+		{
+			"url": "assets/image/pic1.png",
+			"type": "image",
+			"name": "pic1_png"
+		},
+		{
+			"url": "assets/image/pic2.png",
+			"type": "image",
+			"name": "pic2_png"
+		},
+		{
+			"url": "assets/image/pic3.png",
+			"type": "image",
+			"name": "pic3_png"
+		},
+		{
+			"url": "assets/image/pic4.png",
+			"type": "image",
+			"name": "pic4_png"
+		},
+		{
+			"url": "assets/image/pic5.png",
+			"type": "image",
+			"name": "pic5_png"
+		},
+		{
+			"url": "assets/image/square.png",
+			"type": "image",
+			"name": "square_png"
+		},
+		{
+			"url": "assets/image/word1.png",
+			"type": "image",
+			"name": "word1_png"
+		},
+		{
+			"url": "assets/image/ending/button.png",
+			"type": "image",
+			"name": "button_png"
+		},
+		{
+			"url": "assets/image/ending/hand.png",
+			"type": "image",
+			"name": "hand_png"
+		},
+		{
+			"url": "assets/image/ending/icon.png",
+			"type": "image",
+			"name": "icon_png"
+		},
+		{
+			"url": "assets/image/ending/word2.png",
+			"type": "image",
+			"name": "word2_png"
+		},
+		{
+			"url": "assets/image/ending/word3.png",
+			"type": "image",
+			"name": "word3_png"
+		},
+		{
+			"url": "assets/image/ending/word4.png",
+			"type": "image",
+			"name": "word4_png"
+		},
+		{
+			"url": "assets/image/moon/moon_tex.png",
+			"type": "image",
+			"name": "moon_tex_png"
+		},
+		{
+			"url": "assets/image/pic/pic_tex.png",
+			"type": "image",
+			"name": "pic_tex_png"
+		},
+		{
+			"url": "assets/image/moon/moon_ske.json",
+			"type": "json",
+			"name": "moon_ske_json"
+		},
+		{
+			"url": "assets/image/moon/moon_tex.json",
+			"type": "json",
+			"name": "moon_tex_json"
+		},
+		{
+			"url": "assets/image/pic/pic_tex.json",
+			"type": "json",
+			"name": "pic_tex_json"
+		},
+		{
+			"url": "assets/image/pic/pic_ske.json",
+			"type": "json",
+			"name": "pic_ske_json"
+		},
+		{
+			"url": "config/gameConfig.json",
+			"type": "json",
+			"name": "gameConfig_json"
+		},
+		{
+			"url": "config/languages.json",
+			"type": "json",
+			"name": "languages_json"
+		}
+	]
+}

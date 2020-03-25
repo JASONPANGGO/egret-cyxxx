@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.ComInput" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Image id="bg" source="square_png" x="0" y="0" />
+    <e:Label id="word" text="紧" anchorOffsetX="32.5" anchorOffsetY="32.5" textColor="0xdc862c" horizontalCenter="0"
+             verticalCenter="0" size="92" fontFamily="SimHei" />
+</e:Skin>

@@ -7,9 +7,13 @@ namespace ui {
 		public out_con: eui.Group;
 		public bg: eui.Rect;
 		public moon_con: eui.Group;
+		public text_con: eui.Group;
 		public congrats: eui.Image;
 		public explain: eui.Label;
 		public btn: eui.Image;
+
+		public pass_con: eui.Group;
+
 
 		private explainText: string
 
@@ -64,11 +68,18 @@ namespace ui {
 		/** 窗口大小改变时调用 */
 		protected resizeView(): void {
 			// console.info("resizeView", this.width, this.height);
-
-			// this.out_con.scaleX = this.out_con.scaleY = Math.min(this.width / this.out_con.width, 1, this.height / this.out_con.height)
-
+			const baseScale: number = gConst.mobileByScale[GameMgr.screenType][GameMgr.mobileType];
 			if (this.screenType == gConst.screenType.VERTICAL) {
 				//竖屏
+
+
+				this.pass_con.width = 750
+				this.pass_con.height = 1334
+				this.moon_con.y = 0.4 * this.pass_con.height
+				this.moon_con.horizontalCenter = this.text_con.horizontalCenter = 0
+				this.moon_con.x = this.text_con.right = this.moon_con.bottom = this.moon_con.verticalCenter = this.text_con.verticalCenter = NaN
+				this.text_con.bottom = 0
+
 				switch (this.mobileType) {
 					//iPhoneX或以上
 					case gConst.mobileType.IPHONE_X:
@@ -80,8 +91,19 @@ namespace ui {
 					case gConst.mobileType.IPAD:
 						break;
 				}
+
 			} else {
 				//横屏
+
+				this.pass_con.width = 1334
+				this.pass_con.height = 750
+				this.moon_con.verticalCenter = 50
+				this.text_con.verticalCenter = 0
+				this.moon_con.horizontalCenter = this.text_con.horizontalCenter = this.text_con.bottom = NaN
+				this.moon_con.x = 0.25 * this.pass_con.width
+				this.moon_con.bottom = 0
+				this.text_con.right = 0
+
 				switch (this.mobileType) {
 					//iPhoneX或以上
 					case gConst.mobileType.IPHONE_X:
@@ -94,6 +116,9 @@ namespace ui {
 						break;
 				}
 			}
+
+			this.pass_con.scaleX = this.pass_con.scaleY = Math.min(this.width / this.pass_con.width, this.height / this.pass_con.height, 1)
+
 		}
 
 		/** 屏幕横竖屏转换时调用 */
@@ -109,9 +134,10 @@ namespace ui {
 
 
 		/* =========== 业务代码-start =========== */
-
+		private canClsoe: boolean = false
 		private enter() {
 			this.visible = true
+			this.canClsoe = false
 			this.explain.text = ''
 			let bone: com.ComBones = new com.ComBones()
 			bone.setData(this.moon_con, 'moon')
@@ -127,19 +153,20 @@ namespace ui {
 							this.explain.text = this.explain.text + this.explainText[i]
 							i++
 						} else {
+							this.canClsoe = true
 							egret.clearInterval(timer)
 						}
-					}, this, 50)
+					}, this, 30)
 					gTween.loopAlpha(this.btn, 0, 600, 1)
 				}
 			})
 		}
 
 		private nextLevel() {
+			if (!this.canClsoe) return
+			this.removeEvent()
 			gTween.fadeOut(this, 500, 1, void 0, void 0, {
 				callback: () => {
-
-					console.log('close')
 					this.close()
 					this.congrats.visible = false
 					GameMgr.gameScene.nextLevel()

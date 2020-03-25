@@ -110,7 +110,7 @@ namespace com {
 		/* =========== 业务代码-start =========== */
 
 		private onSelect(event: egret.TouchEvent) {
-
+			if (!GameMgr.gameScene.canSelect || !GameMgr.gameScene.started) return
 			// 现在已经选择了
 			if (this.selected) {
 				this.cancelSelect()
@@ -130,18 +130,27 @@ namespace com {
 		public cancelSelect() {
 			this.selected = false
 			gTween.fadeOut(this.bg_selected, 300, 1)
-			gTween.toScale(this.con, 0.8 / 0.85, 300)
+			gTween.toScale(this.con, 1, 300, void 0, void 0, void 0, {
+				callback: () => {
+					GameMgr.gameScene.canSelect = true
+				}
+			})
 		}
 
 		public updateWord() {
+			this.selected = false
 			gTween.fadeOut(this.bg_selected)
+			gTween.toScale(this.con, 1, 300)
 			gTween.toSmallHide(this.word, 500, 1, 1, egret.Ease.backOut, void 0, {
 				callback: () => {
 					this.word.text = this.displayWord
-					gTween.toBigShow(this.word, 500, 1, 1, egret.Ease.bounceOut)
+					gTween.toBigShow(this.word, 500, 1, 1, egret.Ease.bounceOut, void 0, {
+						callback: () => {
+							GameMgr.gameScene.canSelect = true
+						}
+					})
 				}
 			})
-			this.selected = false
 		}
 
 		/* =========== 业务代码-end =========== */
